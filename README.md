@@ -99,6 +99,7 @@ yarn prettier:fix
  └─ vite-env.d.ts
 
 ```
+
 #### `api/`
 
 This directory contains modules related to API calls and logic, often including authentication-related files.
@@ -131,13 +132,14 @@ This directory contains page components to be placed here when applying routing 
 
 This directory contains utility files that are commonly used, such as regular expression patterns or common functions.
 
-
 ## Use
 
 ### Project Name
+
 replace `TEMPLATE_PROJECT`
 
 ### Favicon
+
 https://www.favicon-generator.org/
 
 ```
@@ -154,6 +156,7 @@ https://www.favicon-generator.org/
 ```
 
 #### manifest.josn (use this)
+
 ```
 {
   "short_name": "TEMPLATE_PROJECT",
