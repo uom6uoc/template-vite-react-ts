@@ -1,6 +1,6 @@
-# TEMPLATE_VITE_REACT_TYPESCRIPT
+# TEMPLATE_PROJECT
 
-TEMPLATE_VITE_REACT_TYPESCRIPT
+TEMPLATE_PROJECT
 
 ## Requirements
 
@@ -72,23 +72,33 @@ To automatically fix any formatting errors using Prettier, use the following com
 yarn prettier:fix
 ```
 
-## directory structure
+## Structure
 
 ```
+└─ package.json
+└─ vite.config.ts
+└─ tsconfig.json
+└─ tsconfig.node.json
+└─ .eslintrc
+└─ .prettierrc
+└─ .github
+
+└─ index.html
+└─ public
 └─ src
  ├─ api
  ├─ assets
  ├─ components
  ├─ config
  ├─ constants
- ├─ contexts
  ├─ hooks
  ├─ pages
  ├─ utils
- ├─ App.js
- └─ main.js
-```
+ ├─ App.tsx
+ ├─ Main.tsx
+ └─ vite-env.d.ts
 
+```
 #### `api/`
 
 This directory contains modules related to API calls and logic, often including authentication-related files.
@@ -109,10 +119,6 @@ This directory contains configuration files. If there are only a few config file
 
 This directory contains files defining commonly used constants.
 
-### `contexts/`
-
-This directory contains files related to the Context API, which is used for state management. If using Redux instead of Context API, the directory name can be changed to store/.
-
 ### `hooks/`
 
 This directory contains custom hooks.
@@ -124,3 +130,75 @@ This directory contains page components to be placed here when applying routing 
 ### `utils/`
 
 This directory contains utility files that are commonly used, such as regular expression patterns or common functions.
+
+
+## Use
+
+### Project Name
+replace `TEMPLATE_PROJECT`
+
+### Favicon
+https://www.favicon-generator.org/
+
+```
+└─ public/
+ └─ favicon/ (svg 24개)
+  ├─ favicon.svg
+  ├─ android-ico.svg
+  ├─ apple-ico.svg
+  └─ ms-ico.svg
+ ├─ browserconfig.xml
+ ├─ favicon.ico
+ └─ manifest.json
+
+```
+
+#### manifest.josn (use this)
+```
+{
+  "short_name": "TEMPLATE_PROJECT",
+  "name": "TEMPLATE_PROJECT",
+  "icons": [
+    {
+      "src": "/favicon/android-icon-36x36.png",
+      "sizes": "36x36",
+      "type": "image/png",
+      "density": "0.75"
+    },
+    {
+      "src": "/favicon/android-icon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "density": "1.0"
+    },
+    {
+      "src": "/favicon/android-icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "density": "1.5"
+    },
+    {
+      "src": "/favicon/android-icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "density": "2.0"
+    },
+    {
+      "src": "/favicon/android-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "density": "3.0"
+    },
+    {
+      "src": "/favicon/android-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "density": "4.0"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#FFFFFF",
+  "background_color": "#000000"
+}
+```

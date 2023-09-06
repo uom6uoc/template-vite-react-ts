@@ -1,0 +1,23 @@
+name: Check code with eslint
+
+on:
+  pull_request:
+    branches: [development]
+
+run-name: Code Validation
+
+jobs:
+  code-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+      - name: Install
+        run: yarn install --immutable --immutable-cache --check-cache
+      - name: Check - eslint & prettier
+        run: |
+          yarn lint
+          yarn prettier
+      - name: Check - Build
+        run: yarn build
+

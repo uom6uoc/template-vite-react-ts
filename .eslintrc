@@ -1,21 +1,66 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "overrides": [],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  "plugins": ["react", "@typescript-eslint"],
-  "rules": {
-    "react/react-in-jsx-scope": "off"
-  }
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended"
+	],
+	"overrides": [],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"plugins": ["react", "import", "@typescript-eslint", "react-refresh"],
+	"rules": {
+		"react/react-in-jsx-scope": "off",
+		"@typescript-eslint/no-unused-vars": "warn",
+		"react-refresh/only-export-components": [
+			"warn",
+			{ "allowConstantExport": true }
+		],
+		"import/order": [
+			"error",
+			{
+				"groups": [
+					["builtin", "external", "internal"],
+					["parent", "sibling", "index"],
+					["object", "type", "unknown"]
+				],
+				"pathGroups": [
+					{
+						"pattern": "vite",
+						"group": "builtin",
+						"position": "before"
+					},
+					{
+						"pattern": "react",
+						"group": "builtin",
+						"position": "before"
+					},
+					{
+						"pattern": "~/**",
+						"group": "parent",
+						"position": "before"
+					},
+					{
+						"pattern": "./*",
+						"group": "parent",
+						"position": "after"
+					}
+				],
+				"distinctGroup": false,
+				"pathGroupsExcludedImportTypes": ["type"],
+				"newlines-between": "always",
+				"alphabetize": {
+					"order": "asc",
+					"caseInsensitive": true
+				}
+			}
+		]
+	}
 }

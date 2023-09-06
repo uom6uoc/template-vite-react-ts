@@ -9,5 +9,13 @@
   "jsxSingleQuote": false,
   "arrowParens": "always",
   "proseWrap": "preserve",
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "printWidth": 120
+      }
+    }
+  ]
 }

@@ -1,10 +1,14 @@
 import * as React from 'react';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
+
 import App from '~/App';
+import initConsole from '~/utils/console';
 
-const container = document.getElementById('root') as HTMLElement;
+initConsole();
 
-const root = createRoot(container);
+const container = document.getElementById('root')! as HTMLElement;
+const root = ReactDOM.createRoot(container);
+
 root.render(
   <React.StrictMode>
     <App />

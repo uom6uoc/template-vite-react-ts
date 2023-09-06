@@ -1,0 +1,41 @@
+name: Production Deploy
+
+on:
+  push:
+    branches: [production]
+
+run-name: Deployed to production by ${{ github.actor }}
+
+env:
+  AWS_REGION: ${{ vars.AWS_REGION }}
+  AWS_S3_BUCKET_NAME: ${{ vars.AWS_S3_BUCKET_NAME }}
+  AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
+  AWS_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build
+        run: yarn build
+
+      - name: Configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: ${{ env.AWS_ROLE_ARN}}
+
+      - name: Deploy to S3 and Invalidate CloudFront Cache
+        run: |
+          aws s3 sync ./dist s3://${{ env.AWS_S3_BUCKET_NAME }}/
+          aws cloudfront create-invalidation --distribution-id ${{ env.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths '/*'
