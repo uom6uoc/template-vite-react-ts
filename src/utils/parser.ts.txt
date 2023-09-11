@@ -1,0 +1,58 @@
+// TODO: update common util
+
+type ParseHTMLKey = 'h1' | 'h2' | 'h3';
+
+export type ParseHTML = {
+  [key in ParseHTMLKey]: string;
+};
+
+const findNonEmptyTextContent = (elements: NodeListOf<Element>): string => {
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    const textContent = element?.textContent?.trim();
+
+    if (
+      textContent !== undefined &&
+      textContent !== '' &&
+      element.parentElement?.tagName === 'BODY'
+    ) {
+      return textContent;
+    }
+  }
+  return '';
+};
+
+const parseHTML = (
+  html?: string,
+  options?: ParseHTMLKey[]
+): Partial<ParseHTML> => {
+  const result: Partial<ParseHTML> = {};
+
+  if (html === undefined) return result;
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, 'text/html');
+  const h1Elements = doc.querySelectorAll('h1');
+  const imgElement = doc.querySelector('img');
+  const pElements = doc.querySelectorAll('p');
+
+  if (options === undefined) {
+    options = ['h1', 'h2', 'h3'];
+  }
+
+  if (options.includes('h1')) {
+    result.h1 = findNonEmptyTextContent(h1Elements);
+  }
+
+  if (options.includes('h2')) {
+    result.h2 = imgElement?.getAttribute('src') ?? '';
+  }
+
+  if (options.includes('h3')) {
+    result.h3 = findNonEmptyTextContent(pElements);
+  }
+
+  return result;
+};
+
+export { parseHTML };

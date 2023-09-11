@@ -5,7 +5,7 @@ const initConsole = () => {
   };
 
   console.info(
-    `%c${__PACKAGE_NAME} - v${__PACKAGE_VERSION}`,
+    `%c${__PACKAGE_NAME.toUpperCase()} - v${__PACKAGE_VERSION}`,
     `color:${style.color} ; font-size: ${style.size};`,
     `[${import.meta.env.MODE}]`
   );
