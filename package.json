@@ -1,7 +1,7 @@
 {
   "name": "TEMPLATE_PROJECT",
   "private": true,
-  "version": "2023.09.06",
+  "version": "2023.09.11",
   "type": "module",
   "scripts": {
     "dev": "vite --mode dev",
@@ -12,22 +12,22 @@
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "prettier": "prettier --debug-check src",
     "prettier:fix": "prettier --write src",
-    "package:upgrade": "yarn upgrade && syncyarnlock -s -k && yarn install",
-    "package:latest": "yarn upgrade --latest && syncyarnlock -s -k && yarn install"
+    "package:upgrade": "yarn upgrade-interactive && syncyarnlock -s -k && yarn install",
+    "package:latest": "yarn upgrade-interactive --latest && syncyarnlock -s -k && yarn install"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^20.5.9",
+    "@types/node": "^20.6.0",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
     "@typescript-eslint/typescript-estree": "^6.6.0",
     "@vitejs/plugin-react": "^4.0.4",
-    "eslint": "^8.48.0",
+    "eslint": "^8.49.0",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -36,6 +36,6 @@
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
     "vite-plugin-svgr": "^3.2.0",
-    "vite-tsconfig-paths": "^4.2.0"
+    "vite-tsconfig-paths": "^4.2.1"
   }
 }

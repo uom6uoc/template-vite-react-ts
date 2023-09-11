@@ -1,33 +1,34 @@
 {
   "compilerOptions": {
+    // Basic Settings
     "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "skipLibCheck": true,
-    "allowJs": false,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
 
-    /* Bundler mode */
+    // Module and Path Settings
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "useDefineForClassFields": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
 
-    /* Linting */
+    // Build and Output Related
+    "noEmit": true,
+    "skipLibCheck": true,
+    "allowJs": false,
+
+    // Inspection and Warning Related
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["src/*"]
-    }
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
