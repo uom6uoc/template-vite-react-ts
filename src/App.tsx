@@ -1,12 +1,11 @@
-import * as React from 'react';
+import '~/style/app.css';
 
-import './app.css';
+import AppRouter from '~/app/Router';
 
 const App = () => {
   return (
     <>
-      <h1>TEMPLATE_PROJECT</h1>
-      <h2>Hello world</h2>
+      <AppRouter />
     </>
   );
 };

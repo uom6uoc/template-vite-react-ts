@@ -7,3 +7,11 @@ h2 {
   font-family: Bagel Fat One;
   font-size: 24px;
 }
+
+a {
+  color: blue;
+}
+
+a:hover {
+  color: red;
+}
