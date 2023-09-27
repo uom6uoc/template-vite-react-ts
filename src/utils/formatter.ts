@@ -1,4 +1,26 @@
-// 지나간 시간을 반환 하는 함수
+const numberWithCommas = (value: number): string => {
+  const [integerPart, decimalPart] = String(value).split('.');
+
+  const integerWithCommas = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+  return decimalPart
+    ? `${integerWithCommas}.${decimalPart}`
+    : integerWithCommas;
+};
+
+const truncateWithEllipsis = (str: string, start = 6, end = 5): string => {
+  const strLength = str.length;
+
+  if (strLength <= start + end) {
+    return str;
+  }
+
+  const startString = str.slice(0, start);
+  const endString = str.slice(-end);
+
+  return `${startString}...${endString}`;
+};
+
 const getTimeElapsed = (date: string | Date): string => {
   const now = new Date();
   const target = new Date(date);
@@ -32,53 +54,9 @@ const getSecElapsed = (date: string | Date): string => {
   return `${seconds} sec ago`;
 };
 
-// 'yyyy/mm/dd' 형식의 날짜 문자열로 포맷하는 함수
-const formatDate = (date: string | Date): string => {
-  const target = new Date(date);
-  const year = target.getFullYear();
-  const month = String(target.getMonth() + 1).padStart(2, '0');
-  const day = String(target.getDate()).padStart(2, '0');
-  return `${year}/${month}/${day}`;
-};
-
-// 'hh:mm' 형식의 시간 문자열로 포맷하는 함수
-const formatTime = (date: string | Date): string => {
-  const target = new Date(date);
-  const hours = String(target.getHours()).padStart(2, '0');
-  const minutes = String(target.getMinutes()).padStart(2, '0');
-  const formattedTime = `${hours}:${minutes}`;
-  return formattedTime;
-};
-
-const numberWithCommas = (value: number): string => {
-  const [integerPart, decimalPart] = String(value).split('.');
-
-  const integerWithCommas = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-
-  return decimalPart
-    ? `${integerWithCommas}.${decimalPart}`
-    : integerWithCommas;
-};
-
-const truncateWithEllipsis = (str: string, start = 6, end = 5): string => {
-  const strLength = str.length;
-
-  if (strLength <= start + end) {
-    return str;
-  }
-
-  const startString = str.slice(0, start);
-  const endString = str.slice(-end);
-
-  return `${startString}...${endString}`;
-};
-
-// 다른 모듈에서 사용할 수 있도록 함수를 익스포트
-export {
-  formatDate,
-  formatTime,
+export default {
+  numberWithCommas,
+  truncateWithEllipsis,
   getTimeElapsed,
   getSecElapsed,
-  numberWithCommas,
-  truncateWithEllipsis
 };

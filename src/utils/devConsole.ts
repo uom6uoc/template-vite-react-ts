@@ -8,7 +8,7 @@ interface ConsoleOptions {
   };
 }
 
-const initConsole = ({ name, version, mode, style = {} }: ConsoleOptions) => {
+const init = ({ name, version, mode, style = {} }: ConsoleOptions) => {
   const color = style.color ?? 'wheat';
   const size = style.size ?? '18px';
 
@@ -25,4 +25,4 @@ const initConsole = ({ name, version, mode, style = {} }: ConsoleOptions) => {
   }
 };
 
-export default initConsole;
+export default { init };

@@ -2,9 +2,9 @@ import * as React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import App from '~/App';
-import initConsole from '~/utils/console';
+import devConsole from '~/utils/devConsole';
 
-initConsole({
+devConsole.init({
   name: __PACKAGE_NAME,
   version: __PACKAGE_VERSION,
   mode: import.meta.env.MODE,
