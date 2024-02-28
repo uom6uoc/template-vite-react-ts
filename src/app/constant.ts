@@ -35,8 +35,8 @@ const ASPECT_RATIO = {
 
 // ******* DEV ******* //
 const LOG_STYLE = {
-  GOLD: 'color: #000000; font-size: 16px; background: #FFD700; padding: 2px 6px; margin-bottom: 8px; border-radius: 4px;',
-  RED: 'color: #000000; font-size: 16px; background: #FF2244; padding: 2px 6px; margin-bottom: 8px; border-radius: 4px;',
+  GOLD: 'color: #000000; font-size: 16px; background: #ffc107; padding: 2px 6px; margin-bottom: 8px; border-radius: 4px;',
+  RED: 'color: #000000; font-size: 16px; background: #dc3545; padding: 2px 6px; margin-bottom: 8px; border-radius: 4px;',
 };
 
 // ******* export ******* //

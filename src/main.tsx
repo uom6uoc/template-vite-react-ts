@@ -8,6 +8,7 @@ devConsole.init({
   name: __PACKAGE_NAME,
   version: __PACKAGE_VERSION,
   mode: import.meta.env.MODE,
+  env: import.meta.env,
   style: { color: 'blue', size: '12px' },
 });
 

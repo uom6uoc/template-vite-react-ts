@@ -6,9 +6,9 @@ TEMPLATE_PROJECT
 
 The project requires the following software versions or higher to run:
 
-- Node.js >= 18.12.1
-- NPM >= 8.19.2
-- Yarn >= 1.22.19
+- Node >= v16.19.0
+- NPM >= v8.19.2
+- Yarn >= v1.22.19
 
 ## Installation
 
