@@ -36,7 +36,7 @@ const createInstance = (config?: AxiosRequestConfig): AxiosInstance => {
 
   instance.interceptors.response.use(
     (response: AxiosResponse) => {
-      if (!import.meta.env.VITE_API_LOG_OFF) {
+      if (import.meta.env.VITE_API_LOG) {
         console.log(
           `%c[${response.config.method?.toUpperCase()}] ${response.config.url}`,
           DEV.LOG_STYLE.GOLD,
@@ -50,7 +50,7 @@ const createInstance = (config?: AxiosRequestConfig): AxiosInstance => {
       return response;
     },
     (error: AxiosError) => {
-      if (!import.meta.env.VITE_API_LOG_OFF) {
+      if (import.meta.env.VITE_API_LOG) {
         console.log(
           `%c[${error.config?.method?.toUpperCase()}] ${error.config?.url}`,
           DEV.LOG_STYLE.RED,
