@@ -4,14 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
+    <!-- TODO: title -->
     <title>TEMPLATE_PROJECT</title>
+
+    <link rel="canonical" href="%VITE_PRODUCT_URL%" />
+    <!-- SITE-VERIFICATION -->
+    <meta name="naver-site-verification" content="%VITE_NAVER_SITE_VERIFICATION%" />
+    <meta name="google-site-verification" content="%VITE_GOOGLE_SITE_VERIFICATION%" />
 
     <!-- favicon -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png" />
     <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png" />
@@ -25,36 +29,32 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
     <link rel="manifest" href="/manifest.json" />
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
 
-    <!-- OPEN-GRAPH -->
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="https://www.TEMPLATE_PROJECT.com" />
-    <meta property="og:site_name" content="TEMPLATE_PROJECT" />
-    <meta property="og:image" content="https://www.TEMPLATE_PROJECT.com/og-image.jpg" />
+    <!-- Open Graph Meta Tags -->
+    <!-- TODO: content -->
+    <meta property="og:site_name" content="" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:image" content="https://www.TEMPLATE_PROJECT.com/og-image.jpg" />
+    <meta property="og:image" content="%VITE_PRODUCT_URL%/image/og-image.png" />
+    <meta property="og:url" content="%VITE_PRODUCT_URL%" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags (Optional) -->
+    <!-- TODO: content -->
+    <meta name="twitter:card" content="" />
     <meta name="twitter:title" content="" />
     <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="%VITE_PRODUCT_URL%image/og-image.png" />
 
-    <!-- FONT:GOOGLE -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" />
-
+    <link rel="stylesheet" href="/font/fonts.css" type="text/css" />
     <link rel="stylesheet" href="/css/reset.css" type="text/css" />
+    <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0"></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- POLYFILL -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   </body>
 </html>

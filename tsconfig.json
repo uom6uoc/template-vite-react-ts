@@ -7,15 +7,15 @@
     "jsx": "react-jsx",
 
     // Module and Path Settings
-    "moduleResolution": "bundler",
+    "moduleResolution": "Node",
     "useDefineForClassFields": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
 
     // Build and Output Related
     "noEmit": true,
-    // "allowImportingTsExtensions": true,
     "skipLibCheck": true,
     "allowJs": false,
 
@@ -29,9 +29,11 @@
     // Path Settings
     "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/*"],
+      "@public/*": ["public/*"]
     }
   },
   "include": ["src/**/*"],
+  "exclude": [],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

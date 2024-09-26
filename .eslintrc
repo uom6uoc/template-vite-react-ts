@@ -1,32 +1,32 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
   },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
   },
   "plugins": ["react", "import", "@typescript-eslint", "react-refresh"],
   "settings": {
     "react": {
-      "version": "detect"
-    }
+      "version": "detect",
+    },
   },
   "rules": {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "react-refresh/only-export-components": [
       "warn",
-      { "allowConstantExport": true }
+      { "allowConstantExport": true },
     ],
     "import/order": [
       "error",
@@ -34,38 +34,38 @@
         "groups": [
           ["builtin", "external", "internal"],
           ["parent", "sibling", "index"],
-          ["object", "type", "unknown"]
+          ["object", "type", "unknown"],
         ],
         "pathGroups": [
           {
             "pattern": "vite",
             "group": "builtin",
-            "position": "before"
+            "position": "before",
           },
           {
             "pattern": "react",
             "group": "builtin",
-            "position": "before"
+            "position": "before",
           },
           {
             "pattern": "~/**",
             "group": "parent",
-            "position": "before"
+            "position": "before",
           },
           {
             "pattern": "./*",
             "group": "parent",
-            "position": "after"
-          }
+            "position": "after",
+          },
         ],
         "distinctGroup": false,
         "pathGroupsExcludedImportTypes": ["type"],
         "newlines-between": "always",
         "alphabetize": {
           "order": "asc",
-          "caseInsensitive": true
-        }
-      }
-    ]
-  }
+          "caseInsensitive": true,
+        },
+      },
+    ],
+  },
 }

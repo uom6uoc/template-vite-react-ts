@@ -1,56 +1,24 @@
-// ******* URLS ******* //
-const API = {
-  base: 'http://localhost:4000/',
-  cdn: 'http://localhost:3000/',
-};
+// ============ SETTING ============ //
 
-const LINK = {
-  gitHub: 'https://github.com/',
-};
-
-// ******* STYLE ******* //
+// ============ STYLE ============ //
 const BREAKPOINTS = {
-  desktop: 1024,
-  mobile: 768,
+  desktop: 1920, // for 1025px ~ 1920px
+  tablet: 1025, // ~1025px
+  mobile: 375, // ~ 375px
 };
 
-const HEADER_HEIGHT = {
-  mobile: 64,
-  desktop: 80,
-};
+export { BREAKPOINTS };
 
-const CONTENT_X_PADDING = {
-  mobile: 16,
-  desktop: 32,
-};
-
-const CONTENT_MAX_WIDTH = {
-  mobile: BREAKPOINTS.mobile + CONTENT_X_PADDING.mobile * 2,
-  desktop: BREAKPOINTS.desktop + CONTENT_X_PADDING.desktop * 2,
-};
-
-const ASPECT_RATIO = {
-  thumbnail: 16 / 9,
-};
-
-// ******* DEV ******* //
+// ============ DEV ============ //
 const LOG_STYLE = {
-  GOLD: 'color: #000000; font-size: 16px; background: #ffc107; padding: 2px 6px; margin-bottom: 8px; border-radius: 4px;',
-  RED: 'color: #000000; font-size: 16px; background: #dc3545; padding: 2px 6px; margin-bottom: 8px; border-radius: 4px;',
-};
-
-// ******* export ******* //
-export const URL = {
-  API,
-  LINK,
-};
-
-export const STYLE = {
-  BREAKPOINTS,
-  HEADER_HEIGHT,
-  CONTENT_X_PADDING,
-  CONTENT_MAX_WIDTH,
-  ASPECT_RATIO,
+  BLUE: 'color: #000000; font-size: 16px; background: #4285F4; padding: 2px 6px; margin-bottom: 8px; border-radius: 4px;',
+  GREEN:
+    'color: #000000; font-size: 16px; background: #34A853; padding: 2px 6px; margin-bottom: 8px; border-radius: 4px;',
+  YELLOW:
+    'color: #000000; font-size: 16px; background: #FBBC05; padding: 2px 6px; margin-bottom: 8px; border-radius: 4px;',
+  RED: 'color: #000000; font-size: 16px; background: #EA4335; padding: 2px 6px; margin-bottom: 8px; border-radius: 4px;',
+  MINI_BLUE:
+    'color: #4285F4; font-size: 12px; background: #000000; padding: 2px 6px; margin-bottom: 8px; border-radius: 4px;',
 };
 
 export const DEV = {

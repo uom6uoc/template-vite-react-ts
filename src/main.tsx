@@ -1,19 +1,15 @@
 import * as React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 
 import App from '~/App';
-import devConsole from '~/utils/devConsole';
 
-devConsole.init({
-  name: __PACKAGE_NAME,
-  version: __PACKAGE_VERSION,
-  mode: import.meta.env.MODE,
-  env: import.meta.env,
-  style: { color: 'blue', size: '12px' },
-});
+if (import.meta.env.DEV && import.meta.env.VITE_IS_MSW === 'true') {
+  const { worker } = await import('~/dev/mocks/browser');
+  worker.start();
+}
 
-const container = document.getElementById('root')! as HTMLElement;
-const root = ReactDOM.createRoot(container);
+const container = document.getElementById('root') as HTMLElement;
+const root = createRoot(container);
 
 root.render(
   <React.StrictMode>

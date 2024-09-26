@@ -1,0 +1,98 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import type {
+  MutationFunction,
+  Query,
+  QueryFunctionContext,
+  QueryKey,
+} from '@tanstack/react-query';
+import type { QueryClient } from '@tanstack/react-query';
+
+// https://tanstack.com/query/v4/docs/react/reference/useQuery
+type UseQueryOptions<
+  TQueryFnData = unknown,
+  TError = unknown,
+  TData = TQueryFnData,
+  TQueryKey extends QueryKey = QueryKey,
+> = {
+  queryKey?: TQueryKey;
+  queryFn?: (context: QueryFunctionContext) => Promise<TData>;
+  enabled?: boolean;
+  networkMode?: 'online' | 'always' | 'offlineFirst';
+  retry?: boolean | number | ((failureCount: number, error: TError) => boolean);
+  retryOnMount?: boolean;
+  retryDelay?: number | ((retryAttempt: number, error: TError) => number);
+  staleTime?: number;
+  cacheTime?: number;
+  queryKeyHashFn?: (queryKey: QueryKey) => string;
+  refetchInterval?:
+    | number
+    | false
+    | ((data: TData | undefined, query: Query) => number | false);
+  refetchIntervalInBackground?: boolean;
+  refetchOnMount: boolean | 'always' | ((query: Query) => boolean | 'always');
+  refetchOnWindowFocus?:
+    | boolean
+    | 'always'
+    | ((query: Query) => boolean | 'always');
+  refetchOnReconnect?:
+    | boolean
+    | 'always'
+    | ((query: Query) => boolean | 'always');
+  notifyOnChangeProps?: string[] | 'all' | (() => string[] | 'all');
+  onSuccess?: (data: TData) => void; // Deprecated v5
+  onError?: (error: TError) => void; // Deprecated v5
+  onSettled?: (data?: TData, error?: TError) => void; // Deprecated v5
+  select?: (data: TData) => unknown;
+  suspense?: boolean;
+  initialData?: TData | (() => TData);
+  initialDataUpdatedAt?: number | (() => number | undefined);
+  placeholderData?: TData | (() => TData);
+  keepPreviousData?: boolean;
+  isDataEqual?: (oldData: TData | undefined, newData: TData) => boolean; // Deprecated v5
+  structuralSharing:
+    | boolean
+    | ((oldData: TData | undefined, newData: TData) => TData);
+  useErrorBoundary:
+    | undefined
+    | boolean
+    | ((error: TError, query: Query) => boolean);
+  meta?: Record<string, unknown>;
+  context?: React.Context<QueryClient | undefined>;
+};
+
+// https://tanstack.com/query/v4/docs/react/reference/useMutation
+type UseMutationOptions<
+  TData = unknown,
+  TError = unknown,
+  TVariables = unknown,
+  TContext = unknown,
+> = {
+  mutationFn?: MutationFunction<TData, TVariables>;
+  cacheTime?: number;
+  mutationKey?: unknown[];
+  networkMode?: 'online' | 'always' | 'offlineFirst';
+  onMutate?: (
+    variables: TVariables
+  ) => Promise<TContext | void> | TContext | void;
+  onSuccess?: (
+    data: TData,
+    variables: TVariables,
+    context?: TContext
+  ) => Promise<unknown> | unknown;
+  onError?: (
+    err: TError,
+    variables: TVariables,
+    context?: TContext
+  ) => Promise<unknown> | unknown;
+  onSettled?: (
+    data: TData,
+    error: TError,
+    variables: TVariables,
+    context?: TContext
+  ) => Promise<unknown> | unknown;
+  retry?: boolean | number | ((failureCount: number, error: TError) => boolean);
+  retryDelay?: number | ((retryAttempt: number, error: TError) => number);
+  useErrorBoundary?: undefined | boolean | ((error: TError) => boolean);
+  meta?: Record<string, unknown>;
+  context?: React.Context<QueryClient | undefined>;
+};

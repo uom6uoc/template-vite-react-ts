@@ -3,13 +3,12 @@ import * as React from 'react';
 import { BREAKPOINTS } from '~/app/constant';
 import { debounce } from '~/utils/performance';
 
-type DeviceType = 'mobile' | 'tablet' | 'laptop' | 'desktop';
+type DeviceType = 'mobile' | 'tablet' | 'desktop';
 
 const getDeviceType = (): DeviceType => {
   const width = window.innerWidth;
   if (width <= BREAKPOINTS.mobile) return 'mobile';
   if (width <= BREAKPOINTS.tablet) return 'tablet';
-  if (width <= BREAKPOINTS.laptop) return 'laptop';
   return 'desktop';
 };
 
